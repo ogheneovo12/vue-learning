@@ -301,6 +301,10 @@ input[type="checkbox"]:disabled + label::before {
   background: #f1f1f1;
 }
 
+.loader-container.hidden{
+    display: none;
+}
+
 .loader {
   text-align: center;
   vertical-align: middle;
