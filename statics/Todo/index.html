@@ -45,7 +45,6 @@
         }
       }
     </script>
-
     <script type="module">
       import { createApp } from "vue";
       import List from "./List.js";
@@ -75,6 +74,11 @@
         },
         mounted() {
           window.addEventListener("load", () => {
+            document
+              .querySelector(".loader-container")
+              ?.classList.add("hidden");
+          });
+          this.$nextTick(function () {
             document
               .querySelector(".loader-container")
               ?.classList.add("hidden");
