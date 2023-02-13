@@ -272,7 +272,7 @@ input[type="checkbox"]:disabled + label::before {
 }
 
 .hidden {
-  display: none !important;
+  display: none;
 }
 
 @media (min-width: 500px) {
@@ -302,7 +302,7 @@ input[type="checkbox"]:disabled + label::before {
 }
 
 .loader-container.hidden{
-    display: none;
+    display: none !important;
 }
 
 .loader {
