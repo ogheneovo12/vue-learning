@@ -95,17 +95,17 @@ main.main {
   box-shadow: 0px 35px 50px -15px rgba(0, 0, 0, 0.5);
 }
 
-.list_box > li {
+.list_box > ul > li {
   padding: 20px 24px;
   border-bottom: 1px solid #e3e4f1;
   text-transform: capitalize;
 }
 
-.list_box.bg-dark > li {
+.list_box.bg-dark > ul > li {
   border-bottom: 1px solid var(--inpt-text-light);
 }
 
-.list_box li:last-of-type {
+.list_box ul > li:last-of-type {
   border-bottom: none;
 }
 
@@ -116,6 +116,7 @@ main.main {
   justify-content: center;
   align-items: center;
   flex-flow: column;
+  text-align: center;
 }
 
 .search {
@@ -301,8 +302,8 @@ input[type="checkbox"]:disabled + label::before {
   background: #f1f1f1;
 }
 
-.loader-container.hidden{
-    display: none !important;
+.loader-container.hidden {
+  display: none !important;
 }
 
 .loader {

@@ -80,18 +80,19 @@ export default {
      <div>
   
     <input v-model="text" placeholder="Type to search or create todo" @keyup.enter="addTodo"  class="search" :class="{ 'bg-dark':isdark, 'bg-light':!isdark, dark:isdark }"   />
+       <div class="list_box " :class="{ 'bg-dark':isdark, 'bg-light':!isdark }">
+       <div class="empty-list" v-if="!filtered.length">
+       <h2>No Todos <span v-if="text">found for {{ text }}</span></h2>
+       <p class="italic" v-if="text">press enter to create</p>
 
-     <ul class="list_box " :class="{ 'bg-dark':isdark, 'bg-light':!isdark }">
+    </div>
+     <ul >
      <li  class="flex" v-for="item in filtered">
      <input :checked="item.completed"  @input="event => toggleComplete(item.id) " type="checkbox" :id="item.id" />
      <label class="flex items-center text-xl" :for="item.id" :class="{'dark':!isdark}"><span :class="{'strike':item.completed }">{{ item.title }}</span></label>
      <button @click="event=> removeTodo(item.id)" class="ml-auto text-button italic text-small pointer">remove</button>
      </li>
-     <div class="empty-list" v-if="!filtered.length">
-        <h4>No Todos <span v-if="text">found for {{ text }}</span></h4>
-        <p class="italic" v-if="text">press enter to create</p>
-
-     </div>
+    
      <li class="flex justify-between text-small"  :class="{ 'dark':isdark }">
      <span>{{ itemsLeft }} items left </span>
       <ul class="flex hidden sm:flex">
@@ -108,6 +109,8 @@ export default {
         {{ option }} 
      </li>
   </ul>
+ 
+  </div>
      </div>
   
   `,
